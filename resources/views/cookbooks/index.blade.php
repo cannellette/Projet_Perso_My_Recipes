@@ -11,7 +11,8 @@
     
     <ul>
         @foreach ($cookbooks as $cookbook)
-            <li>
+        
+        <li>
             <a href="{{ route('cookbooks.show', $cookbook->id) }}">{{ $cookbook->title }}</a>
                 <form action="{{ route('cookbooks.edit', $cookbook->id) }}" method="POST" style="display: inline;">  
                     <button type="submit" >Modifier</button>
