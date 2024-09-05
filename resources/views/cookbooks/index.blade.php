@@ -14,11 +14,10 @@
         
         <li>
             <a href="{{ route('cookbooks.show', $cookbook->id) }}">{{ $cookbook->title }}</a>
-                <form action="{{ route('cookbooks.edit', $cookbook->id) }}" method="POST" style="display: inline;">  
-                    <button type="submit" >Modifier</button>
-                </form>
+                <a href="{{ route('cookbooks.edit', $cookbook->id) }}" style="display: inline;">Modifier</a>
                 <!-- Formulaire pour la suppression -->
                 <form action="{{ route('cookbooks.destroy', $cookbook->id) }}" method="POST" style="display: inline;">
+                    @csrf
                     @method('DELETE')
                     <button type="submit" onclick="return confirm('Êtes-vous sûr de vouloir supprimer ce livre ?')">Supprimer</button>
                 </form>
